@@ -6,11 +6,12 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 17:16:51 by pgouasmi          #+#    #+#             */
-/*   Updated: 2022/11/15 15:36:55 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2022/11/22 14:52:54 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 char	*ft_strchr(const char *s, int c)
 {
 	int		i;
@@ -24,7 +25,7 @@ char	*ft_strchr(const char *s, int c)
 			i++;
 	}
 	if (s[i] == c)
-		return  ((char *) &s[i]);
+		return ((char *) &s[i]);
 	return (0);
 }
 

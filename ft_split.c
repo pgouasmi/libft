@@ -12,7 +12,8 @@
 
 
 #include "libft.h"
-size_t	line_count(char const *s, char c)
+
+static size_t	line_count(char const *s, char c)
 {
 	size_t	i;	
 	size_t	j;
@@ -32,59 +33,60 @@ size_t	line_count(char const *s, char c)
 	return (j);
 }
 
+static size_t ft_word_length(char const *s, char c, size_t i)
+{
+	size_t	j;
+
+	j = 0;
+	while (s[i] != c)
+	{
+		i++;
+		j++;
+	}
+	return (j);
+}
+
+static void	ft_free(char **strs, int j)
+{
+	while (j-- > 0)
+		free(strs[j]);
+	free(strs);
+}
+
 char	**ft_split(char const *s, char c)
 {
-	//char			**tab;
-	unsigned int	i;
-	unsigned int	j;
-	//unsigned int	k;
+	char			**tab;
 	size_t 			word_count;
-
+	size_t			i;
+	size_t			j;
+	size_t			word_length;
 
 	word_count = line_count(s, c);
-	i = 0;
-	j = 0;
-
-	//if (!s)
-		return(0);
-}
-/*
-	tab = malloc(sizeof(char *) * line_count(s, c) + 1);
-	if (!c || line_count(s, c) == 0)
-		return ((char **) s);
+	tab = (char **) malloc (sizeof(char *) * word_count + 1);
 	if (!tab)
 		return (0);
-	*tab[line_count(s, c) + 1] = 0;
-	while (j < word_count)
-	{
-		while (s[i] != c && s[i] != '\0')
-		{
-			i++;
-			k++;
-		}
-		*tab[j] = malloc(sizeof(char) * k + 1);
-		j++;
-		i++;
-		k = 0;
-	}
-
 	i = 0;
 	j = 0;
-	while (s[i])
+	while (j <= word_count)
 	{
-		while (s[i] != c)
-		{
-			tab[j][k] = s[i];
+		while (s[i] == c)
 			i++;
-			k++;
+		word_length = ft_word_length(s, c, i);
+		tab[j] = ft_substr(s, i, word_length);
+		if(!tab[j])
+		{
+			ft_free(tab, j);
+			return (0);
 		}
+		i = i + word_length;
+		while (s[i] == c)
+			i++;
 		j++;
-		i++;
-		k = 0;
 	}
+	tab[j] = 0;
 	return (tab);
 }
-*/
+
 
 /*
 int	main()

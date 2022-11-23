@@ -6,11 +6,12 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 14:05:35 by pgouasmi          #+#    #+#             */
-/*   Updated: 2022/11/16 16:25:52 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2022/11/22 14:23:41 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 int	check_pos_neg(const char *str, int *i)
 {
 	if (str[(*i)] == '-')
@@ -39,10 +40,10 @@ void	ft_skipws(const char *str, int *i)
 
 int	ft_atoi(const char *str)
 {
-	int	i;
-	long long int result;
-	int	*p_i;
-	int	sign;
+	long long int	result;
+	int				i;
+	int				*p_i;
+	int				sign;
 
 	i = 0;
 	result = 0;

@@ -6,12 +6,12 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 13:09:28 by pgouasmi          #+#    #+#             */
-/*   Updated: 2022/11/21 13:17:09 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2022/11/22 15:53:17 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-void    *memmove(void *dst, const void *src, size_t len)
+void    *ft_memmove(void *dst, const void *src, size_t len)
 {
     size_t  i;
 

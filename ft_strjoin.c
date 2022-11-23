@@ -6,13 +6,13 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 17:22:40 by pgouasmi          #+#    #+#             */
-/*   Updated: 2022/11/16 14:32:10 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2022/11/22 15:00:37 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	ft_total_length(const char *s1, const char *s2)
+static unsigned int	ft_total_length(const char *s1, const char *s2)
 {
 	int	i;
 	int	j;
@@ -26,19 +26,13 @@ unsigned int	ft_total_length(const char *s1, const char *s2)
 	return (i + j);
 }
 
-char	*ft_strjoin(const char *s1, const char *s2)
+static char	*joinstr(const char *s1, const char *s2, char *str)
 {
-	int		i;
-	int		j;
-	char	*str;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	j = 0;
-	if(!s1 || !s2)
-		return (0);
-	str = malloc(sizeof(char) * ft_total_length(s1, s2) + 1);
-	if (!str)
-		return (0);
 	while (s1[i])
 	{
 		str[j] = s1[i];
@@ -55,12 +49,15 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	str[j] = '\0';
 	return (str);
 }
-/*
-#include <stdio.h>
-int	main()
+
+char	*ft_strjoin(const char *s1, const char *s2)
 {
-	const char	s1[] = "Salut les ";
-	const char	s2[] = "ZOBS	t";
-	printf("%s\n",  ft_strjoin(s1, s2));
+	char	*str;
+
+	if (!s1 || !s2)
+		return (0);
+	str = malloc(sizeof(char) * ft_total_length(s1, s2) + 1);
+	if (!str)
+		return (0);
+	return (joinstr(s1, s2, str));
 }
-*/

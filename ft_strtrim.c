@@ -6,11 +6,12 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 16:06:30 by pgouasmi          #+#    #+#             */
-/*   Updated: 2022/11/16 18:44:37 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2022/11/22 16:50:11 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 static unsigned int	ft_count_first(char const *s1, char const *set)
 {
 	unsigned int	i;
@@ -31,7 +32,8 @@ static unsigned int	ft_count_first(char const *s1, char const *set)
 	return (i);
 }
 
-static unsigned int	ft_count_last(char const *s1, char const *set, unsigned int len)
+static unsigned int	ft_count_last(char const *s1, char const *set,
+unsigned int len)
 {
 	unsigned int	i;
 	unsigned int	j;
@@ -79,7 +81,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char			*str;
 
 	if (!s1)
-		return(0);
+		return (0);
 	if (s1[0] == 0)
 		return ((char *) s1);
 	total_length = ft_strlen(s1);
@@ -87,10 +89,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (0);
 	usable_length = ft_strlen (s1)
 		- ft_count_first(s1, set) - ft_count_last(s1, set, total_length);
-	if (usable_length == 0)
-		return (0);
 	str = malloc(sizeof(char) * usable_length + 1);
 	if (!str)
 		return (0);
+	if (usable_length == 0)
+	{
+		str[0] = '\0';
+		return (str);
+	}
 	return (ft_str_duplicate(s1, set, str, usable_length));
 }

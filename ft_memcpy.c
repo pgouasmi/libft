@@ -3,25 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: pascal <pascal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 13:01:47 by pgouasmi          #+#    #+#             */
-/*   Updated: 2022/11/21 13:10:57 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2022/11/23 17:19:57 by pascal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-void    *memcpy(void *restrict dst, const void *restrict src, size_t n)
-{
-    size_t  i;
 
-    i = 0;
+void    *ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
+{
+    unsigned char   *str;
+    str = (unsigned char*)dst;
     if (n == 0)
-        return (0);
-    while (i < n)
+    while (n)
     {
-        ((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
-        i++;
+        *(unsigned char*)dst = *(unsigned char*)src;
+        n--;
+        str++;
+        src++;
     }
     return (dst);
 }

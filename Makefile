@@ -1,8 +1,19 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: pascal <pascal@student.42.fr>              +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/11/22 15:15:07 by pgouasmi          #+#    #+#              #
+#    Updated: 2022/11/23 17:40:37 by pascal           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = libft.a
 
 SRCS =	ft_isalnum.c	\
 		ft_isalpha.c	\
-		ft_bzero.c		\
 		ft_isascii.c	\
 		ft_isdigit.c	\
 		ft_isprint.c	\
@@ -25,10 +36,20 @@ SRCS =	ft_isalnum.c	\
 		ft_split.c 		\
 		ft_strtrim.c	\
 		ft_substr.c		\
-		ft_memset.c		\
+		ft_bzero.c		\
 		ft_memcpy.c		\
 		ft_memmove.c	\
+		ft_memset.c		\
 		ft_strmapi.c	\
+		ft_calloc.c		\
+		ft_memcmp.c		\
+		ft_memchr.c		\
+		ft_putchar_fd.c	\
+		ft_putstr_fd.c	\
+		ft_putendl_fd.c	\
+		ft_putnbr_fd.c	\
+
+
 
 OBJS = ${SRCS:.c=.o}
 

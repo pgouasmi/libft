@@ -6,12 +6,12 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 16:37:19 by pgouasmi          #+#    #+#             */
-/*   Updated: 2022/11/15 17:53:14 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2022/11/22 14:53:30 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
+
 char	*ft_strdup(const char *s1)
 {
 	int		i;
