@@ -6,16 +6,20 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 14:29:18 by pgouasmi          #+#    #+#             */
-/*   Updated: 2022/11/23 18:50:37 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2022/11/25 13:27:15 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * Check if character is alphabetical
+ * As described by man ascii(7)
+ */
 int	ft_isalpha(int c)
 {
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-		return (1);
-	else
-		return (0);
+	return (
+		('A' <= c && c <= 'Z') ||
+		('a' <= c && c <= 'z')
+	);
 }
 
 /*

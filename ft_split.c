@@ -6,10 +6,9 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 13:18:46 by pgouasmi          #+#    #+#             */
-/*   Updated: 2022/11/23 18:51:05 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2022/11/24 12:50:18 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "libft.h"
 
@@ -33,7 +32,7 @@ static size_t	line_count(char const *s, char c)
 	return (j);
 }
 
-static size_t ft_word_length(char const *s, char c, size_t i)
+static size_t	ft_word_length(char const *s, char c, size_t i)
 {
 	size_t	j;
 
@@ -56,7 +55,7 @@ static void	ft_free(char **strs, int j)
 char	**ft_split(char const *s, char c)
 {
 	char			**tab;
-	size_t 			word_count;
+	size_t			word_count;
 	size_t			i;
 	size_t			j;
 	size_t			word_length;
@@ -73,7 +72,7 @@ char	**ft_split(char const *s, char c)
 			i++;
 		word_length = ft_word_length(s, c, i);
 		tab[j] = ft_substr(s, i, word_length);
-		if(!tab[j])
+		if (!tab[j])
 		{
 			ft_free(tab, j);
 			return (0);
@@ -86,19 +85,3 @@ char	**ft_split(char const *s, char c)
 	tab[j] = 0;
 	return (tab);
 }
-
-
-/*
-int	main()
-{
-		char const	s[] = "salut les zozos";
-		char	c  = ' ';
-		int j = 0;
-		char **tab = ft_split(s, c);
-		while (*tab[j])
-		{
-			printf("%s\n", tab[j]);
-			j++;
-		}
-}
-*/

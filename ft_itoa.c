@@ -6,31 +6,37 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 15:19:03 by pgouasmi          #+#    #+#             */
-/*   Updated: 2022/11/23 18:51:07 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2022/11/25 14:13:22 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-int	ft_digit_count(unsigned int n, int *div)
+static int	digit_count(unsigned int n, int *div)
 {
 	int	i;
 
 	i = 1;
 	while (n / *div > 9)
 	{
-		*div = *div * 10;
+		*div *= 10;
 		i++;
 	}
 	return (i);
 }
 
-char	*ft_put_digit(char *str, unsigned int nbr, int i, int diviseur)
+static char	*put_number(char *str, unsigned int nbr, int diviseur)
 {
+	int	i;
+
+	i = 0;
+	if (str[i] == '-')
+		i++;
 	while (diviseur >= 1)
 	{
-		str[i] = nbr / diviseur + 48;
-		nbr = nbr - ((str[i] - 48) * diviseur);
+		str[i] = '0' + nbr / diviseur;
+		nbr = nbr - ((str[i] - '0') * diviseur);
 		diviseur = diviseur / 10;
 		i++;
 	}
@@ -38,39 +44,43 @@ char	*ft_put_digit(char *str, unsigned int nbr, int i, int diviseur)
 	return (str);
 }
 
+
+/* A faire :
+Factoriser au max (if !str)
+renommer si besoin
+*/
+
 char	*ft_itoa(int n)
 {
-	char				*str;
-	int					i;
-	int					div;
-	int					*p_div;
-	unsigned int		nbr;
+	char			*str;
+	int				div;
+	unsigned int	nbr;
 
-	i = 0;
+
 	div = 1;
-	p_div = &div;
 	nbr = n;
 	if (n < 0)
 	{
-		nbr = nbr * -1;
-		str = malloc(sizeof(char) * ft_digit_count(nbr, p_div) + 2);
+		nbr = n * -1;
+		str = malloc(sizeof(char) * digit_count(nbr, &div) + 2);
 		if (!str)
 			return (0);
-		str[i] = '-';
-		nbr = n * -1;
-		i++;
+		str[0] = '-';
+		
 	}
 	else
-		str = malloc(sizeof(char) * ft_digit_count(nbr, p_div) + 1);
-	if (!str)
-		return (0);
-	return (ft_put_digit(str, nbr, i, div));
+	{
+		str = malloc(sizeof(char) * digit_count(nbr, &div) + 1);
+		if (!str)
+			return (0);
+	}
+	return (put_number(str, nbr, div));
 }
+
 /*
-#include <stdio.h>
 int	main()
 {
-	int n = -2147483648;
+	int n = -214748348;
 	printf("%s\n", ft_itoa(n));
 }
 */

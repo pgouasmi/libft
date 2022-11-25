@@ -6,7 +6,7 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:32:32 by pgouasmi          #+#    #+#             */
-/*   Updated: 2022/11/15 13:51:22 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2022/11/25 17:14:55 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ size_t	ft_strlen(const char *str)
 #include <stdio.h>
 int	main()
 {
-	char	str[] = "Salut mon pote";
-	printf("%d\n", ft_strlen(str));
+	char	str[] = "";
+	printf("%zu\n", ft_strlen(str));
 }
 */

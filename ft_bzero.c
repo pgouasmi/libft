@@ -6,19 +6,20 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 11:44:18 by pgouasmi          #+#    #+#             */
-/*   Updated: 2022/11/22 15:51:04 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2022/11/24 18:21:38 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/* a = b => a - b = 0
+	*/
 
 void	ft_bzero(void *s, size_t n)
 {
 	size_t	i;
 
 	i = 0;
-	if (n == 0)
-		return;
 	while (i < n)
 	{
 		((char *)s)[i] = 0;

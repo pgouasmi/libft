@@ -6,7 +6,7 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 11:50:14 by pgouasmi          #+#    #+#             */
-/*   Updated: 2022/11/16 12:47:17 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2022/11/25 16:41:33 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,18 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	unsigned int	i;
-	unsigned char *str;
+	size_t			i;
+	unsigned char	*str;
 
+	if (!s)
+		return (0);
 	str = (unsigned char *) s;
-	i = ft_strlen((char *) str) + 1;
-	while (i > 0)
-		{
-			i--;
-			if (str[i] == c)
-				return ((char *) &str[i]);
-		}
+	i = ft_strlen(s);
+	while (i >= 0)
+	{
+		if (str[i] == c)
+			return ((char *)&s[i]);
+		i--;
+	}
 	return (0);
 }
-
-/*
-#include <stdio.h>
-int	main()
-{
-	const char	s[] = "456116618";
-	char	c = 54;
-	printf("%s\n", ft_strrchr(s, c));
-}
-*/
