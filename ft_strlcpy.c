@@ -6,7 +6,7 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:57:33 by pgouasmi          #+#    #+#             */
-/*   Updated: 2022/11/27 18:29:48 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2022/11/28 13:30:38 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	i = 0;
 	if (!size)
 		return (ft_strlen(src));
-;	while (src[i] && i < size - 1)
+	while (src[i] && i < size - 1)
 	{
 		dst[i] = src[i];
 		i++;

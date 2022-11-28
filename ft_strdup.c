@@ -6,7 +6,7 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 16:37:19 by pgouasmi          #+#    #+#             */
-/*   Updated: 2022/11/22 14:53:30 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2022/11/28 11:03:28 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strdup(const char *s1)
 	int		i;
 	char	*s2;
 
-	s2 = malloc(sizeof(char) * ft_strlen((const char *) s1) + 1);
+	s2 = malloc(sizeof(char) * ft_strlen(s1) + 1);
 	if (!s2)
 		return (0);
 	i = 0;

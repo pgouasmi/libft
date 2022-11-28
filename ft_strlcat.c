@@ -6,7 +6,7 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 16:12:17 by pgouasmi          #+#    #+#             */
-/*   Updated: 2022/11/27 18:44:07 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2022/11/28 17:17:38 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	j;
 
 	i = ft_strlen(dst);
-	if (size < i)
+	if (size <= i)
 		return (size + ft_strlen(src));
 	while (dst[i])
 		i++;

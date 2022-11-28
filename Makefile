@@ -6,7 +6,7 @@
 #    By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/22 15:15:07 by pgouasmi          #+#    #+#              #
-#    Updated: 2022/11/28 09:25:24 by pgouasmi         ###   ########.fr        #
+#    Updated: 2022/11/28 11:40:21 by pgouasmi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,7 @@ SRCS =	ft_isalnum.c	\
 		ft_memmove.c	\
 		ft_memset.c		\
 		ft_strmapi.c	\
+		ft_striteri.c	\
 		ft_calloc.c		\
 		ft_memcmp.c		\
 		ft_memchr.c		\
@@ -48,8 +49,6 @@ SRCS =	ft_isalnum.c	\
 		ft_putstr_fd.c	\
 		ft_putendl_fd.c	\
 		ft_putnbr_fd.c	\
-		ft_lstnew.c		\
-		ft_lstadd_front.c	\
 
 
 

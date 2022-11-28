@@ -6,14 +6,13 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 15:19:03 by pgouasmi          #+#    #+#             */
-/*   Updated: 2022/11/25 14:13:22 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2022/11/28 18:00:02 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-static int	digit_count(unsigned int n, int *div)
+static int	digit_count(unsigned int n, long int *div)
 {
 	int	i;
 
@@ -26,7 +25,7 @@ static int	digit_count(unsigned int n, int *div)
 	return (i);
 }
 
-static char	*put_number(char *str, unsigned int nbr, int diviseur)
+static char	*put_number(char *str, long int nbr, long int diviseur)
 {
 	int	i;
 
@@ -44,43 +43,36 @@ static char	*put_number(char *str, unsigned int nbr, int diviseur)
 	return (str);
 }
 
-
-/* A faire :
-Factoriser au max (if !str)
-renommer si besoin
-*/
-
 char	*ft_itoa(int n)
 {
 	char			*str;
-	int				div;
-	unsigned int	nbr;
-
+	long int		div;
+	long int		nbr;
+	long int		*p_div;
 
 	div = 1;
 	nbr = n;
-	if (n < 0)
+	p_div = &div;
+	if (nbr < 0)
 	{
-		nbr = n * -1;
-		str = malloc(sizeof(char) * digit_count(nbr, &div) + 2);
+		nbr = nbr * -1;
+		str = malloc(sizeof(char) * digit_count(nbr, p_div) + 2);
 		if (!str)
 			return (0);
 		str[0] = '-';
-		
 	}
 	else
 	{
-		str = malloc(sizeof(char) * digit_count(nbr, &div) + 1);
+		str = malloc(sizeof(char) * digit_count(nbr, p_div) + 1);
 		if (!str)
 			return (0);
 	}
 	return (put_number(str, nbr, div));
 }
 
-/*
+#include <stdio.h>
 int	main()
 {
-	int n = -214748348;
+	int n = 42;
 	printf("%s\n", ft_itoa(n));
 }
-*/

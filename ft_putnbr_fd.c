@@ -6,7 +6,7 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 17:35:14 by pascal            #+#    #+#             */
-/*   Updated: 2022/11/24 13:14:58 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2022/11/28 15:45:05 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,19 +30,13 @@ void	ft_putnbr_fd(int n, int fd)
 	unsigned int	div;
 	long long int	nbr;
 
-	if (n == -2147483648)
-	{
-		write(fd, "-2147483648", 12);
-		return ;
-	}
-	if (n < 0)
+	nbr = n;
+	if (nbr < 0)
 	{
 		write(fd, "-", 1);
-		nbr = n * -1;
+		nbr = nbr * -1;
 	}
-	else
-		nbr = n;
-	div = biggest_divider(n);
+	div = biggest_divider(nbr);
 	while (div >= 1)
 	{
 		c = (nbr / div) + 48;

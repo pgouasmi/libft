@@ -6,7 +6,7 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 13:01:47 by pgouasmi          #+#    #+#             */
-/*   Updated: 2022/11/27 18:53:02 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2022/11/28 13:29:51 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		((unsigned char *) dst)[i] = ((unsigned char *) src) [i];
+		((unsigned char *)dst)[i] = ((unsigned char *) src)[i];
 		i++;
 	}
 	return (dst);

@@ -6,7 +6,7 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 16:06:30 by pgouasmi          #+#    #+#             */
-/*   Updated: 2022/11/25 13:16:36 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2022/11/28 17:30:55 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,26 +80,17 @@ char	*ft_strtrim(char const *s1, char const *set)
 	unsigned int	total_length;
 	char			*str;
 
-	if (!s1)
-		return (0);
-	if (s1[0] == 0)
-		return ((char *) s1);
+	if (!s1 || (!s1 && !set))
+		return (ft_strdup(""));
 	total_length = ft_strlen(s1);
 	if (ft_count_first(s1, set) == total_length)
-	{
-		str = malloc(sizeof(char) * 1);
-		str[0] = '\0';
-		return (str);
-	}
+		return (ft_strdup(""));
 	usable_length = ft_strlen (s1)
 		- ft_count_first(s1, set) - ft_count_last(s1, set, total_length);
+	if (usable_length == 0)
+		return (ft_strdup(""));
 	str = malloc(sizeof(char) * usable_length + 1);
 	if (!str)
 		return (0);
-	if (usable_length == 0)
-	{
-		str[0] = '\0';
-		return (str);
-	}
 	return (ft_str_duplicate(s1, set, str, usable_length));
 }

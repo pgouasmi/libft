@@ -6,7 +6,7 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 15:43:03 by pgouasmi          #+#    #+#             */
-/*   Updated: 2022/11/25 16:21:35 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2022/11/28 14:58:10 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	j;
 	size_t	str_length;
 	char	*str;
-	
+
 	if (!s)
 		return (0);
 	str_length = ft_strlen(s);
