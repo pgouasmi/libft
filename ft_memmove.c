@@ -6,7 +6,7 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 13:09:28 by pgouasmi          #+#    #+#             */
-/*   Updated: 2022/11/24 12:39:52 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2022/11/27 18:57:59 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,16 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t	i;
+	size_t			i;
+	unsigned char	*s;
 
-	if (len == 0)
+	if (!src && !dst)
 		return (0);
+	s = (unsigned char *) dst;
 	i = 0;
 	while (i < len)
 	{
-		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
+		((unsigned char *)s)[i] = ((unsigned char *)src)[i];
 		i++;
 	}
 	return (dst);

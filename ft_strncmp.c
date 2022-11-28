@@ -6,7 +6,7 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 15:46:21 by pgouasmi          #+#    #+#             */
-/*   Updated: 2022/11/25 17:39:41 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2022/11/27 18:10:48 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned int	i;
+	size_t			i;
 	unsigned char	*str1;
 	unsigned char	*str2;
 
@@ -22,7 +22,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	str2 = (unsigned char *) s2;
 	
 	i = 0;
-	while (str1[i] && i < n)
+	while ((str1[i] || str2[i]) && i < n)
 	{
 		if (str1[i] == str2[i])
 			i++;

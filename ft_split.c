@@ -6,7 +6,7 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 13:18:46 by pgouasmi          #+#    #+#             */
-/*   Updated: 2022/11/24 12:50:18 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2022/11/27 19:10:43 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ static size_t	line_count(char const *s, char c)
 		if (s[i] == c)
 		{
 			j++;
-			i++;
+			while (s[i] == c)
+				i++;
 		}
 		else
 			i++;

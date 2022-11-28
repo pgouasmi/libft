@@ -6,7 +6,7 @@
 #    By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/22 15:15:07 by pgouasmi          #+#    #+#              #
-#    Updated: 2022/11/23 18:50:33 by pgouasmi         ###   ########.fr        #
+#    Updated: 2022/11/28 09:25:24 by pgouasmi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,6 +48,8 @@ SRCS =	ft_isalnum.c	\
 		ft_putstr_fd.c	\
 		ft_putendl_fd.c	\
 		ft_putnbr_fd.c	\
+		ft_lstnew.c		\
+		ft_lstadd_front.c	\
 
 
 
