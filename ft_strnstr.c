@@ -6,7 +6,7 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 12:14:00 by pgouasmi          #+#    #+#             */
-/*   Updated: 2022/11/29 10:21:25 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2022/11/29 11:41:15 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	j = 0;
 	while (haystack[i] && i < len)
 	{
-		if (haystack[i] == needle[j])
+		if (haystack[i] == needle[j] && i + j < len)
 		{
 			while (haystack[i + j] == needle[j] && i + j < len)
 			{
