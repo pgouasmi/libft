@@ -6,36 +6,31 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 15:19:03 by pgouasmi          #+#    #+#             */
-/*   Updated: 2022/11/28 18:00:02 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2022/11/29 10:21:09 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	digit_count(unsigned int n, long int *div)
+int	ft_digit_count(unsigned int n, int *div)
 {
 	int	i;
 
 	i = 1;
 	while (n / *div > 9)
 	{
-		*div *= 10;
+		*div = *div * 10;
 		i++;
 	}
 	return (i);
 }
 
-static char	*put_number(char *str, long int nbr, long int diviseur)
+char	*ft_put_digit(char *str, unsigned int nbr, int i, int diviseur)
 {
-	int	i;
-
-	i = 0;
-	if (str[i] == '-')
-		i++;
 	while (diviseur >= 1)
 	{
-		str[i] = '0' + nbr / diviseur;
-		nbr = nbr - ((str[i] - '0') * diviseur);
+		str[i] = nbr / diviseur + 48;
+		nbr = nbr - ((str[i] - 48) * diviseur);
 		diviseur = diviseur / 10;
 		i++;
 	}
@@ -45,34 +40,30 @@ static char	*put_number(char *str, long int nbr, long int diviseur)
 
 char	*ft_itoa(int n)
 {
-	char			*str;
-	long int		div;
-	long int		nbr;
-	long int		*p_div;
+	char				*str;
+	int					i;
+	int					div;
+	int					*p_div;
+	unsigned int		nbr;
 
+	i = 0;
 	div = 1;
-	nbr = n;
 	p_div = &div;
-	if (nbr < 0)
+	nbr = n;
+	if (n < 0)
 	{
 		nbr = nbr * -1;
-		str = malloc(sizeof(char) * digit_count(nbr, p_div) + 2);
-		if (!str)
-			return (0);
-		str[0] = '-';
+		str = malloc(sizeof(char) * ft_digit_count(nbr, p_div) + 2);
 	}
 	else
+		str = malloc(sizeof(char) * ft_digit_count(nbr, p_div) + 1);
+	if (!str)
+		return (0);
+	if (n < 0)
 	{
-		str = malloc(sizeof(char) * digit_count(nbr, p_div) + 1);
-		if (!str)
-			return (0);
+		str[i] = '-';
+		nbr = n * -1;
+		i++;
 	}
-	return (put_number(str, nbr, div));
-}
-
-#include <stdio.h>
-int	main()
-{
-	int n = 42;
-	printf("%s\n", ft_itoa(n));
+	return (ft_put_digit(str, nbr, i, div));
 }
