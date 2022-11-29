@@ -6,7 +6,7 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 15:55:23 by pgouasmi          #+#    #+#             */
-/*   Updated: 2022/11/28 15:30:46 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2022/11/29 14:53:48 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*result;
-	
+
+	if (count > 0 && size > SIZE_MAX / count)
+		return (0);
 	result = malloc(size * count);
 	if (!result)
 		return (0);

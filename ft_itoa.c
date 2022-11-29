@@ -6,7 +6,7 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 15:19:03 by pgouasmi          #+#    #+#             */
-/*   Updated: 2022/11/29 10:21:09 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2022/11/29 12:59:44 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,20 +43,18 @@ char	*ft_itoa(int n)
 	char				*str;
 	int					i;
 	int					div;
-	int					*p_div;
 	unsigned int		nbr;
 
 	i = 0;
 	div = 1;
-	p_div = &div;
 	nbr = n;
 	if (n < 0)
 	{
 		nbr = nbr * -1;
-		str = malloc(sizeof(char) * ft_digit_count(nbr, p_div) + 2);
+		str = malloc(sizeof(char) * ft_digit_count(nbr, &div) + 2);
 	}
 	else
-		str = malloc(sizeof(char) * ft_digit_count(nbr, p_div) + 1);
+		str = malloc(sizeof(char) * ft_digit_count(nbr, &div) + 1);
 	if (!str)
 		return (0);
 	if (n < 0)
