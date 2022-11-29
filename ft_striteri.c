@@ -6,13 +6,13 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 11:38:52 by pgouasmi          #+#    #+#             */
-/*   Updated: 2022/11/28 11:47:48 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2022/11/29 10:07:18 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
+
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	size_t	i;
@@ -22,8 +22,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	i = 0;
 	while (s[i])
 	{
-		s[i] = f(i, s[i]);
+		(*f)(i, s + i);
 		i++;
 	}
 }
-*/
