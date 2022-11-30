@@ -6,7 +6,7 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 17:53:40 by pgouasmi          #+#    #+#             */
-/*   Updated: 2022/11/29 18:14:33 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2022/11/30 11:59:44 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,5 @@ void ft_lstadd_back(t_list **lst, t_list *new)
 	}
 	while (lst && i-- > 1)
 		lst = lst->next;
-	
 	return (lst);
 }

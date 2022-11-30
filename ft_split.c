@@ -6,7 +6,7 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 13:18:46 by pgouasmi          #+#    #+#             */
-/*   Updated: 2022/11/29 16:00:39 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2022/11/30 11:59:02 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,19 +54,12 @@ static void	ft_free(char **tab)
 	free(tab);
 }
 
-char	**ft_split(char const *s, char c)
+static char	**fill_tab(size_t word_count, const char *s, char **tab, char c)
 {
-	char			**tab;
-	size_t			word_count;
-	size_t			word_length;
-	size_t			i;
-	size_t			j;
-	
+	size_t	i;
+	size_t	j;
+	size_t	word_length;
 
-	word_count = line_count(s, c);
-	tab = (char **) malloc (sizeof(char *) * (word_count + 1));
-	if (!tab)
-		return (0);
 	i = 0;
 	j = 0;
 	while (j < word_count)
@@ -89,20 +82,14 @@ char	**ft_split(char const *s, char c)
 	return (tab);
 }
 
-/*
-#include <stdio.h>
-int main()
+char	**ft_split(char const *s, char c)
 {
-	int j;
-	char **tab;
+	char			**tab;
+	size_t			word_count;
 
-	j = 0;
-	tab = ft_split("HELLO a tous", ' ');
-	while (tab[j])
-	{
-		printf("%s\n", tab[j]);
-		j++;
-	}
-	
+	word_count = line_count(s, c);
+	tab = (char **) malloc (sizeof(char *) * (word_count + 1));
+	if (!tab)
+		return (0);
+	return (fill_tab(word_count, s, tab, c));
 }
-*/
