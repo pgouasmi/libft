@@ -6,7 +6,7 @@
 #    By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/22 15:15:07 by pgouasmi          #+#    #+#              #
-#    Updated: 2022/11/30 12:25:01 by pgouasmi         ###   ########.fr        #
+#    Updated: 2022/11/30 13:22:41 by pgouasmi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,9 +50,7 @@ SRCS =	ft_isalnum.c	\
 		ft_putendl_fd.c	\
 		ft_putnbr_fd.c	\
 
-B_SRCS =	ft_lstnew ft_lstadd_front ft_lstsize ft_lstlast ft_lstadd_back ft_lstdelone ft_lstclear ft_lstiter ft_lstmap
-
-
+B_SRCS =	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
 OBJS = ${SRCS:.c=.o}
 
@@ -66,8 +64,12 @@ FLAG = -Wall -Wextra -Werror
 
 all: $(NAME)
 
+bonus:		$(BOBJS) $(HEADER) Makefile
+			ar rcs $(NAME) $(BOBJS)
+
 $(NAME):	$(OBJS) $(HEADER) Makefile
 			ar rcs $(NAME) $(OBJS)
+
 
 %.o:		%.c $(HEADER) Makefile
 			$(CC) $(FLAG) -I . -c $< -o $@
@@ -79,6 +81,6 @@ fclean: 	clean
 			rm -f $(NAME)
 
 re:			fclean
-			$(MAKE) all
+			$(MAKE) all 
 
 .PHONY: all clean fclean re
