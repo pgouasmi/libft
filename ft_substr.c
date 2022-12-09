@@ -6,7 +6,7 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 15:43:03 by pgouasmi          #+#    #+#             */
-/*   Updated: 2022/11/29 14:00:04 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2022/12/09 10:54:41 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	str[j] = '\0';
 	return (str);
 }
-
-/*
-#include <stdio.h>
-int	main()
-{
-	char const	s[] = "Salut les zozos";
-	unsigned int	start = 3;
-	unsigned int	len = 10;
-	printf("%s\n", ft_substr(s, start, len));
-}
-*/

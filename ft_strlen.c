@@ -6,7 +6,7 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:32:32 by pgouasmi          #+#    #+#             */
-/*   Updated: 2022/11/25 17:14:55 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2022/12/09 10:53:52 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,3 @@ size_t	ft_strlen(const char *str)
 		i++;
 	return (i);
 }
-/*
-#include <stdio.h>
-int	main()
-{
-	char	str[] = "";
-	printf("%zu\n", ft_strlen(str));
-}
-*/

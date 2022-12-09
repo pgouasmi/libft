@@ -6,7 +6,7 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 14:34:03 by pgouasmi          #+#    #+#             */
-/*   Updated: 2022/11/23 18:50:36 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2022/12/09 10:51:47 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,3 @@ int	ft_isalnum(int c)
 	else
 		return (0);
 }
-
-/*
-#include <stdio.h>
-int	main()
-{
-	char c = ' ';
-	printf("%d\n", ft_isalnum(c));
-}
-*/

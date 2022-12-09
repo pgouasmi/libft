@@ -6,7 +6,7 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 16:37:19 by pgouasmi          #+#    #+#             */
-/*   Updated: 2022/11/28 11:03:28 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2022/12/09 10:53:35 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,3 @@ char	*ft_strdup(const char *s1)
 	s2[i] = '\0';
 	return (s2);
 }
-
-/*
-#include <stdio.h>
-int	main()
-{
-	const char	s1[] = "Salut a tous les zozos";
-	printf("%s\n", ft_strdup(s1));
-}
-*/

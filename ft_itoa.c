@@ -6,13 +6,13 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 15:19:03 by pgouasmi          #+#    #+#             */
-/*   Updated: 2022/11/29 12:59:44 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2022/12/09 10:52:39 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_digit_count(unsigned int n, int *div)
+static int	ft_digit_count(unsigned int n, int *div)
 {
 	int	i;
 
@@ -25,7 +25,7 @@ int	ft_digit_count(unsigned int n, int *div)
 	return (i);
 }
 
-char	*ft_put_digit(char *str, unsigned int nbr, int i, int diviseur)
+static char	*ft_put_digit(char *str, unsigned int nbr, int i, int diviseur)
 {
 	while (diviseur >= 1)
 	{

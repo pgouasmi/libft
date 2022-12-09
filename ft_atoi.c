@@ -6,13 +6,13 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 14:05:35 by pgouasmi          #+#    #+#             */
-/*   Updated: 2022/11/23 18:50:35 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2022/12/09 10:51:31 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	check_pos_neg(const char *str, int *i)
+static int	check_pos_neg(const char *str, int *i)
 {
 	if (str[(*i)] == '-')
 	{
@@ -30,7 +30,7 @@ int	check_pos_neg(const char *str, int *i)
 		return (2);
 }
 
-void	ft_skipws(const char *str, int *i)
+static void	ft_skipws(const char *str, int *i)
 {
 	while (str[(*i)] == '\t' || str[(*i)] == '\n'
 		|| str[(*i)] == '\v' || str[(*i)] == '\f'
@@ -63,12 +63,3 @@ int	ft_atoi(const char *str)
 		result = result * -1;
 	return ((int)result);
 }
-/*
-#include <stdio.h>
-int	main()
-{
-	char str[] = " 		 +214646849";
-	printf("%d\n", ft_atoi(str));
-	printf("%d\n", atoi(str));
-}
-*/

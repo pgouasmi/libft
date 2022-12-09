@@ -6,13 +6,13 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 17:35:14 by pascal            #+#    #+#             */
-/*   Updated: 2022/11/28 15:45:05 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2022/12/09 10:53:09 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	biggest_divider(long long int nbr)
+static int	biggest_divider(long long int nbr)
 {
 	int	div;
 
